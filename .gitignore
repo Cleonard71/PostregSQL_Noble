@@ -1,0 +1,13 @@
+# Never commit these
+CONNECTION.md
+.pgpw
+*.pgpw
+
+# PostgreSQL binaries and data (large, machine-specific)
+/pgsql/
+/data/
+/logs/
+
+# OS
+Thumbs.db
+.DS_Store
