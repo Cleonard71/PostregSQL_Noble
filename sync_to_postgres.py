@@ -7,15 +7,15 @@ Usage:  python sync_to_postgres.py
 import hashlib
 import os
 import re
+import sys
 from pathlib import Path
 
 import psycopg  # pip install psycopg[binary]
 
 MEMORY_DIR = Path(__file__).parent
-DSN = os.environ.get(
-    "CLAUDE_HUB_DSN",
-    "host=localhost port=5432 dbname=claude_hub user=postgres password=RVlQ02nCAEzvbcT6gSrx",
-)
+DSN = os.environ.get("CLAUDE_HUB_DSN")
+if not DSN:
+    sys.exit("Set CLAUDE_HUB_DSN env var, e.g.: host=localhost port=5432 dbname=claude_hub user=postgres password=YOUR_PW")
 
 FRONTMATTER_RE = re.compile(r"^---\n(.*?)\n---\n(.*)$", re.DOTALL)
 
