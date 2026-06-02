@@ -2,6 +2,7 @@
 CONNECTION.md
 .pgpw
 *.pgpw
+psql-claude.bat
 
 # PostgreSQL binaries and data (large, machine-specific)
 /pgsql/
